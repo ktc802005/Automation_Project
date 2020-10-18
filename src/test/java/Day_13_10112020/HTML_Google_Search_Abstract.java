@@ -16,6 +16,7 @@ public class HTML_Google_Search_Abstract extends Abstract_Class {
             Reusable_Methods_Loggers.sendKeys(driver,"//*[@name='q']","Cars",logger,"Search Field");
             Reusable_Methods_Loggers.submit(driver,"//*[@name='btnK']",logger,"Search Button");
             Thread.sleep(2500);
+            //for github check
         }//end of test
 
         @Test(dependsOnMethods = "Google_Search")
