@@ -22,20 +22,15 @@ public class Abstract_Class {
         public static ExtentReports reports;
         public static ExtentTest logger;
     //declare all the global variables outside of the methods
-    public static Workbook readableFile;
-    Sheet readableSheet;
-    WritableWorkbook writeableFile;
-    WritableSheet writableSheet;
-    int rowCount;
 
-    private Object ExtentTest;
-    private Object String;
         @BeforeSuite
         public void setPrecondition() throws IOException {
             //set the driver here
             driver = Reusable_Methods_Loggers.getDriver();
             //set the report path here
             reports = new ExtentReports("src/main/java/HTML_Report/AutomationReport.html",true);
+
+
         }//end of before suite
 
         //to be able to pick up the name of your test classes dynamically we need to use beforemethod
@@ -52,7 +47,7 @@ public class Abstract_Class {
         @AfterSuite
         public void endSession(){
             reports.flush();
-            //driver.quit();
+            driver.quit();
         }//end of afterSuite
 
 
