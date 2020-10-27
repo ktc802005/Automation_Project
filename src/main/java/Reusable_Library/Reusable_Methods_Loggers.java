@@ -172,6 +172,24 @@ public class Reusable_Methods_Loggers {
             e.printStackTrace();
         }
     }//end of screenshot method
+
+
+    //method to mouse hover on an element
+    public static void mouseHover(WebDriver driver,String locator,String elementName){
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        Actions actions = new Actions(driver);
+        try{
+            System.out.println("Mouse Hover a value on element " + elementName);
+            WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+            actions.moveToElement(element).perform();
+        } catch (Exception e) {
+            System.out.println("Unable to mouse click element " + elementName + " " + e);
+        }
+    }//end of click method
+
+
+
+
 }//end of java class
 
 
