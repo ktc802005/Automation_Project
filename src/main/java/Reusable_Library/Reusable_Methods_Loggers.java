@@ -11,6 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -187,7 +191,59 @@ public class Reusable_Methods_Loggers {
         }
     }//end of click method
 
+    //method to upload a file(image,doc, etc...) from your computer by using robot command
+    public static void uploadFile(String filePath) throws AWTException
+    {
+        try
+        {
+            StringSelection ss = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+            Robot robot = new Robot();
+            robot.delay(1000);
+            //imitate mouse events like ENTER, CTRL+C, CTRL+V
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.delay(1000);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.delay(1000);
+        }
 
+        catch (Exception exp)
+        {
+            exp.printStackTrace();
+        }
+
+    }//end of upload file using Robot command
+
+
+
+    public static void uploadMediaByRobot(String path) throws AWTException {
+
+            StringSelection strSelection = new StringSelection(path);
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard.setContents(strSelection, null);
+
+            Robot robot = new Robot();
+
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            //robot.delay(200);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+
+    }
 
 
 }//end of java class

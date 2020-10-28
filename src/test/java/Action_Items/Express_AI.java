@@ -1,5 +1,6 @@
 package Action_Items;
 
+import Reusable_Library.Abstract_Class;
 import Reusable_Library.Reusable_Methods;
 import Reusable_Library.Reusable_Methods_Loggers;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -23,9 +24,9 @@ import java.io.IOException;
 
 
 
-    public class Express_AI  {
+    public class Express_AI  extends Abstract_Class {
     //declare all the global variables outside of the methods
-    WebDriver driver;
+    //WebDriver driver;
     Workbook readableFile;
     Sheet readableSheet;
     WritableWorkbook writeableFile;
@@ -88,7 +89,7 @@ import java.io.IOException;
             Thread.sleep(2000);
 
             //navigate to men's tab
-            Reusable_Methods_Loggers.clickByIndex();
+           // Reusable_Methods_Loggers.clickByIndex();
             Reusable_Methods.click(driver, "//*[contains(@href='href=/mens-clothing/shirts/cat410008')]", "Shirts");
             Thread.sleep(2000);
             //select 3rd image
@@ -110,7 +111,7 @@ import java.io.IOException;
             Reusable_Methods_Loggers.click(driver,"//*[@name='lastname']",logger,"Last Name");
             Reusable_Methods_Loggers.sendKeys(driver,"//*[@name='lastname']",lastName,logger,"Last Name");
             //email
-            Reusable_Methods_Loggers.click(driver,"//*[@");
+           // Reusable_Methods_Loggers.click(driver,"//*[@");
 
 
         }//end of main method

@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-public class Yahoo_AI extends Abstract_Class {
+/*public class Yahoo_AI extends Abstract_Class {
 
     @test
 
@@ -22,3 +22,4 @@ public void Yahoo_AI throws InterruptedException {
         List<WebElement> AmountofLinksn = driver.findElements(By.xpath("href=//finance.yahoo.com/"))
 
 }
+*/
